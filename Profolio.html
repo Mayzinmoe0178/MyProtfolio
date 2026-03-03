@@ -49,9 +49,11 @@
       .profile-img {
         width: 100px;
         height: 100px;
-        background: #ddd;
         border-radius: 50%;
         margin: 0 auto 15px;
+        display: block; /* ပုံကို အလယ်ရောက်အောင် လုပ်တာပါ */
+        object-fit: cover; /* ပုံမပြဲသွားအောင် ထိန်းပေးပါတယ် */
+        border: 3px solid #fdbf00; /* ပုံဘေးမှာ အဝါရောင် အနားသတ်လေး ထည့်ကြည့်ပါ */
       }
 
       .sidebar h2 {
@@ -180,8 +182,7 @@
   <body>
     <div class="main-container">
       <div class="sidebar">
-        <div class="profile.jpg"></div>
-        <h2>May Zin Moe</h2>
+        <img src="profile.jpg" alt="May Zin Moe" class="profile-img" />
         <p>Backend Developer</p>
 
         <div class="skill-bar">
@@ -200,6 +201,14 @@
         <div class="qr-section">
           <p style="font-size: 0.7rem">SCAN FOR Github Account</p>
           <img src="frame (1).png" alt="QR Code" />
+        </div>
+
+        <div class="github-link">
+          <a
+            href="https://github.com/Mayzinmoe0178/Remarket_backend"
+            target="_blank"
+            >View My GitHub</a
+          >
         </div>
       </div>
 
@@ -226,7 +235,7 @@
               >Database Design</strong
             >
             <p style="font-size: 0.8rem; color: #777">
-              SQL Server & Optimization
+              SQL Server, MySql & Optimization
             </p>
           </div>
           <div class="service-card">
