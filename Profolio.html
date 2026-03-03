@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>May Zin Moe | Portfolio</title>
+    <style>
+      /* ၁။ အခြေခံ Background နှင့် Layout */
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #fdbf00; /* Figma ပုံထဲကလို အဝါရောင်နောက်ခံ */
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .main-container {
+        background: white;
+        width: 900px;
+        display: flex;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.8s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* ၂။ ဘယ်ဘက် Sidebar */
+      .sidebar {
+        width: 30%;
+        background: #ffffff;
+        padding: 30px;
+        border-right: 1px solid #eee;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        background: #ddd;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+      }
+
+      .sidebar h2 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        color: #333;
+      }
+      .sidebar p {
+        font-size: 0.8rem;
+        color: #777;
+        margin-bottom: 20px;
+      }
+
+      .skill-bar {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .skill-name {
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      .bar-bg {
+        background: #eee;
+        height: 6px;
+        border-radius: 3px;
+        margin-top: 5px;
+      }
+      .bar-fill {
+        background: #fdbf00;
+        height: 100%;
+        border-radius: 3px;
+      }
+
+      /* ၃။ ညာဘက် Content */
+      .content {
+        width: 70%;
+        padding: 40px;
+        background: #f8f9fa;
+      }
+
+      .intro-box {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .intro-text h1 {
+        font-size: 1.8rem;
+        margin: 0;
+      }
+      .intro-text span {
+        color: #fdbf00;
+      }
+
+      /* ၄။ Services Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        /* margin-left: 100px; */
+      }
+
+      .service-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-bottom: 3px solid transparent;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-bottom: 3px solid #fdbf00;
+      }
+
+      .qr-section {
+        margin-top: 20px;
+      }
+      .qr-section img {
+        width: 120px;
+        border: 5px solid #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Mobile အတွက် ပြင်ဆင်ချက် (Screen width 768px ထက် ငယ်သွားရင်) */
+      @media (max-width: 768px) {
+        .main-container {
+          width: 95%; /* ဘေးမှာ နေရာလွတ်လေး နည်းနည်းချန်ထားမယ် */
+          flex-direction: column; /* Sidebar နဲ့ Content ကို အပေါ်အောက် စီမယ် */
+          height: auto;
+          margin: 20px 0;
+        }
+
+        .sidebar {
+          width: 100%; /* Sidebar ကို အပြည့်ယူမယ် */
+          border-right: none;
+          border-bottom: 1px solid #eee; /* ဘေးမျဉ်းအစား အောက်မျဉ်းပြောင်းမယ် */
+          padding: 20px;
+        }
+
+        .content {
+          width: 100%; /* Content ကိုလည်း အပြည့်ယူမယ် */
+          padding: 20px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr; /* Services တွေကို တစ်ခုချင်းစီပဲ စီမယ် */
+        }
+
+        .intro-box {
+          padding: 20px;
+        }
+
+        .intro-text h1 {
+          font-size: 1.5rem; /* စာသားအရွယ်အစား နည်းနည်း လျှော့မယ် */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="profile.jpg"></div>
+        <h2>May Zin Moe</h2>
+        <p>Backend Developer</p>
+
+        <div class="skill-bar">
+          <div class="skill-name">C# / .NET Core</div>
+          <div class="bar-bg">
+            <div class="bar-fill" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name">SQL Server & MySql</div>
+          <div class="bar-bg">
+            <div class="bar-fill" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="qr-section">
+          <p style="font-size: 0.7rem">SCAN FOR Github Account</p>
+          <img src="frame (1).png" alt="QR Code" />
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="intro-box">
+          <div class="intro-text">
+            <h1>I'm May Zin Moe<br /><span>Backend Developer</span></h1>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 10px">
+              Passionate about building scalable web APIs and database systems.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; color: #333">My Services</h3>
+        <div class="services-grid">
+          <div class="service-card">
+            <strong style="display: block; margin-bottom: 5px"
+              >Web Development</strong
+            >
+            <p style="font-size: 0.8rem; color: #777">ASP.NET Core APIs</p>
+          </div>
+          <div class="service-card">
+            <strong style="display: block; margin-bottom: 5px"
+              >Database Design</strong
+            >
+            <p style="font-size: 0.8rem; color: #777">
+              SQL Server & Optimization
+            </p>
+          </div>
+          <div class="service-card">
+            <strong style="display: block; margin-bottom: 10px"
+              >Authentication</strong
+            >
+            <p style="font-size: 0.8rem; color: #777">
+              JWT & Security Implementation
+            </p>
+          </div>
+          <!-- <div class="service-card">
+            <strong style="display: block; margin-bottom: 5px"
+              >App Deployment</strong
+            >
+            <p style="font-size: 0.8rem; color: #777">IIS & Cloud Hosting</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
